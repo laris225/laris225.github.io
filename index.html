@@ -11,16 +11,13 @@
 
     <script>
       // javascript for details.html
-      let url =
-        document.location.href;
+      let y = new URLSearchParams(window.location.search).get("y");
       const container = document.querySelector(".container");
-      const idUrl = url.slice(url.lastIndexOf('/'));
-      console.log(idUrl)
 
       const renderVideo = () => {
         const template = `
-          <iframe width="100%" height="315" style="margin-top:20px;margin-bottom: 10px;"
-              src=`https:www.youtube.com/embed/${idUrl}?autoplay=1`>
+        <iframe width="100%" height="315" style="margin-top:20px;margin-bottom: 10px;"
+              src='https:www.youtube.com/embed/${y}?autoplay=1'>
           </iframe> <br><br>
           <h2 style="width: auto;margin: 5px;text-align: inherit; font-size: 18px;line-height: 1.5;"> 
             Pour ne rien ratter de vos évènements, clicquer sur ce lien pour télécharger sur 
@@ -31,9 +28,9 @@
               Appstore
             </a>
           </h2>
-      `;
+  `;
 
-        container.innerHTML = template;
+        container.innerHTML = y ? template : "<h1>Bienvenue chez Laris</h1>";
       };
 
       window.addEventListener("DOMContentLoaded", () => renderVideo());
