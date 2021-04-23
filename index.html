@@ -17,22 +17,22 @@
 
       const renderVideo = () => {
         const template = `
-      <h1> Clicquer sur ce lien pour télécharger sur 
-        <a href="https://play.google.com/store" style="text-decoration: none; text-transform: none; color: '#3498DB'; font-size: 20px; font-weight: bold;">
-          Playstore
-        </a> ou 
-        <a href="https://www.apple.com/app-store/" style="text-decoration: none; text-transform: none; color: '#3498DB'; font-size: 20px; font-weight: bold;">
-          Appstore
-        </a>
-      </h1>
-    <iframe width="420" height="315"
-        src=${youyou}>
-    </iframe>
-  `;
+          <iframe width="420" height="315"
+              src=${youyou}>
+          </iframe> <br>
+          <h2 style="width: 90%; margin:10px"> Pour ne rien ratter de vos évènements, clicquer sur ce lien pour télécharger sur 
+            <a href="https://play.google.com/store" style="text-decoration: none; text-transform: none; color: '#3498DB'; font-size: 20px; font-weight: bold;">
+              Playstore
+            </a> ou 
+            <a href="https://www.apple.com/app-store/" style="text-decoration: none; text-transform: none; color: '#3498DB'; font-size: 20px; font-weight: bold;">
+              Appstore
+            </a>
+          </h2>
+      `;
 
         container.innerHTML = youyou
           ? template
-          : "<h1>Bienvenue chez Laris</h1>";
+          : "<h1>Problème de connexion</h1>";
       };
 
       window.addEventListener("DOMContentLoaded", () => renderVideo());
