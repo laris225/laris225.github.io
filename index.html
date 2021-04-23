@@ -14,12 +14,13 @@
       let url =
         document.location.href;
       const container = document.querySelector(".container");
+      const idUrl = url.slice(url.lastIndexOf('/'));
       console.log(url)
 
       const renderVideo = () => {
         const template = `
           <iframe width="100%" height="315" style="margin-top:20px;margin-bottom: 10px;"
-              src=${url}>
+              src=`https:www.youtube.com/embed/${idUrl}?autoplay=1`>
           </iframe> <br><br>
           <h2 style="width: auto;margin: 5px;text-align: inherit; font-size: 18px;line-height: 1.5;"> 
             Pour ne rien ratter de vos évènements, clicquer sur ce lien pour télécharger sur 
@@ -32,9 +33,7 @@
           </h2>
       `;
 
-        container.innerHTML = youyou
-          ? template
-          : "<h1>Problème de connexion</h1>";
+        container.innerHTML = template;
       };
 
       window.addEventListener("DOMContentLoaded", () => renderVideo());
