@@ -11,14 +11,15 @@
 
     <script>
       // javascript for details.html
-      let youyou =
-        new URLSearchParams(window.location.search).get("youyou");
+      let url =
+        document.location.href;
       const container = document.querySelector(".container");
+      console.log(url)
 
       const renderVideo = () => {
         const template = `
           <iframe width="100%" height="315" style="margin-top:20px;margin-bottom: 10px;"
-              src=${youyou}>
+              src=${url}>
           </iframe> <br><br>
           <h2 style="width: auto;margin: 5px;text-align: inherit; font-size: 18px;line-height: 1.5;"> 
             Pour ne rien ratter de vos évènements, clicquer sur ce lien pour télécharger sur 
